@@ -1,21 +1,23 @@
 body {
 	background-color: #ffef1a;
-	margin: 10% 40% 10% 40%;
 }
 
-form {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color: black;
-	left-margin: 30%;
-	right-margin: 30%;
+img {
+	margin-left: 32%;
+	margin-right: 32%;
 }
 
 p {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: black;
+	margin-left: 32%;
+	margin-right: 32%;
 }
 
-img {
-	left-margin: 30%;
-	right-margin: 30%;
+form {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: black;
+	margin-left: 32%;
+	margin-right: 32%;
 }
+
