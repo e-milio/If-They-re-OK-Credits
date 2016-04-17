@@ -1,0 +1,197 @@
+/* line 5, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../scss/base.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 8, ../scss/base.scss */
+body {
+  background: black;
+  font-size: 1.8rem;
+  line-height: 1.75em;
+  color: ghostwhite;
+}
+
+/* line 17, ../scss/base.scss */
+header,
+main {
+  width: 100%;
+  max-width: 612px;
+  margin: auto;
+}
+
+/* line 24, ../scss/base.scss */
+main {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* line 29, ../scss/base.scss */
+main.list {
+  padding-bottom: 100vh;
+}
+/* line 31, ../scss/base.scss */
+main.list article {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+/* line 36, ../scss/base.scss */
+main.list article section {
+  flex: 0 0 50%;
+  box-sizing: border-box;
+}
+/* line 40, ../scss/base.scss */
+main.list article section:first-child:not(:only-child) {
+  text-align: right;
+  padding-right: 1em;
+}
+/* line 44, ../scss/base.scss */
+main.list article section:nth-of-type(2) {
+  text-align: left;
+  padding-left: 1em;
+}
+/* line 48, ../scss/base.scss */
+main.list article section:only-child {
+  flex: 0 0 100%;
+  padding-left: calc(50% + 1em);
+  text-align: left;
+}
+
+/* line 56, ../scss/base.scss */
+section.message {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* line 69, ../scss/base.scss */
+section.message.success {
+  background: mediumspringgreen;
+  color: black;
+}
+
+/* line 73, ../scss/base.scss */
+section.message.error {
+  background: tomato;
+}
+
+/* line 76, ../scss/base.scss */
+.autoDismiss {
+  font-size: 1.2rem;
+}
+
+/* line 84, ../scss/base.scss */
+main.submission label {
+  display: inline-block;
+  width: 250px;
+}
+/* line 88, ../scss/base.scss */
+main.submission input {
+  width: 50%;
+}
+/* line 91, ../scss/base.scss */
+main.submission li.submit {
+  text-align: center;
+}
+/* line 93, ../scss/base.scss */
+main.submission li.submit h1 {
+  display: inline-block;
+  border: 3px solid white;
+  padding: 15px 10px 20px;
+  cursor: pointer;
+  -moz-transition: color 0.1s linear, border-color 0.1s linear;
+  -o-transition: color 0.1s linear, border-color 0.1s linear;
+  -webkit-transition: color 0.1s linear, border-color 0.1s linear;
+  transition: color 0.1s linear, border-color 0.1s linear;
+}
+/* line 100, ../scss/base.scss */
+main.submission li.submit h1:hover {
+  color: tomato;
+  border-color: tomato;
+}
+
+/* line 107, ../scss/base.scss */
+h1 {
+  font-size: 6.0rem;
+  margin: 1em 0;
+  text-align: center;
+}
+
+/* line 112, ../scss/base.scss */
+p {
+  margin: 1em 0;
+}

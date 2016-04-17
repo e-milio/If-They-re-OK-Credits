@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css" />
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var ifok = new Firebase('https://if-theyre-ok.firebaseio.com');
+      var credits = ifok.child('credits').orderByChild('date');
+
+      var creditList = document.getElementById('list');
+      console.log(creditList);
+
+
+      credits.on('child_added', function(snapshot) {
+        console.log('child added');
+        addCredit(snapshot.val());
+      });
+
+      function init(data) {
+        for (var key in data) {
+          addCredit(data[key]);
+        }
+
+
+
+      }
+
+      function addCredit(data) {
+        var article = document.createElement('article');
+        var name = document.createElement('section');
+        name.innerHTML = data.name;
+        article.appendChild(name);
+        if (data.credit) {
+          var credit = document.createElement('section');
+          credit.innerHTML = data.credit;
+          article.appendChild(credit);
+        }
+        creditList.appendChild(article);
+      }
+
+      function autoScroll() {
+        var scrollInterval = window.setInterval(function() {
+
+        }, 50);
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Contributions and Collaborators</h1>
+    </header>
+    <main id="list" class="list">
+      <article>
+      </article>
+    </main>
+  </body>
+</html>

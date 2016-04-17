@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css" />
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var ifok = new Firebase('https://if-theyre-ok.firebaseio.com');
+      var credits = ifok.child('credits');
+
+      var nameField = document.getElementById('name');
+      var creditField = document.getElementById('credit');
+      var button = document.getElementById('submit');
+      var successMessage = document.getElementById('success');
+      var errorMessage = document.getElementById('error');
+      var thanksName = document.getElementById('thanks-name');
+
+      document.addEventListener('keypress', function(event) {
+        console.log('keypress');
+        if(event.keyCode == 13) {
+          console.log('you pressed enter');
+          submitCredit();
+        }
+      });
+
+      button.addEventListener('click', submitCredit);
+
+      function submitCredit() {
+        var name = nameField.value;
+        var credit = creditField.value;
+        var obj = {
+          'name'    : name,
+          'credit'  : credit
+        };
+        credits.push(obj, function(error) {
+          if(error) {
+            errorMessage.style.opacity = 1;
+            setTimeout(function() {
+              fadeOut(errorMessage, 1)
+            }, 3000);
+          } else {
+            thanksName.innerHTML = name;
+            successMessage.style.opacity = 1;
+            setTimeout(function() {
+              fadeOut(successMessage, 1);
+              nameField.value = '';
+              creditField.value = '';
+            }, 3000);
+          }
+        });
+      }
+
+      function fadeOut(elm, o) {
+        o = o - 0.1;
+        elm.style.opacity = o;
+        if(o > 0) {
+          setTimeout(function() {
+            fadeOut(elm, o)
+          }, 10);
+        }
+      }
+
+    });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>If They're OK</h1>
+      <p>
+        Hi there! Welcome to Emilio and Katie's Senior Show, If They're OK.
+        We're so grateful that you've come by for a visit, to help us out, or to
+        perform with us. We want to thank you all by adding you to our credits.
+        If you would like, feel free to identify yourself however you would like,
+        by name, group, persona, or affiliation, and how you have contributed to the
+        show in the form below.
+      </p>
+      <p>
+        This form feeds directly to a live credits list being projected in the gallery.
+      </p>
+    </header>
+    <section id="success" class="success message">
+      <div class="wrapper">
+        <h1>Thanks, <span id="thanks-name"></span>!</h1>
+        <p>You have been added to our credits!</p>
+        <p class="autoDismiss">This message will auto-dismiss in 3 seconds</p>
+      </div>
+    </section>
+    <section id="error" class="error message">
+      <div class="wrapper">
+        <h1>Uh Oh</h1>
+        <p>Something went wrong with your submission. Try again, or find Emilio and Katie.</p>
+        <p>Sorry about that!</p>
+        <p class="autoDismiss">This message will auto-dismiss in 3 seconds</p>
+      </div>
+    </section>
+    <main class="submission">
+      <ul>
+        <li>
+          <label>Your Name:</label>
+          <input type="text" id="name" value="" />
+        </li>
+        <li>
+          <label>Your Contribution:</label>
+          <input type="text" id="credit" value="" />
+        </li>
+        <li class="submit">
+          <h1 id="submit">Submit</h1>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
