@@ -14,6 +14,11 @@ body {
   color: ghostwhite;
 }
 
+body.submit {
+  background: #ffef1a;
+  color: black;
+}
+
 header,
 main {
   width: 100%;
@@ -23,16 +28,17 @@ main {
 
 main {
   margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 main.list {
   position: relative;
+  max-width: 100%;
   article {
     width: 100%;
     display: flex;
     flex-direction: row;
     margin: 1em 0;
+    font-size: 2.6rem;
     section {
       flex: 0 0 50%;
       box-sizing: border-box;
@@ -123,4 +129,11 @@ h1 {
 }
 p {
   margin: 1em 0;
+}
+p.center {
+  text-align: center;
+}
+img {
+  width: 100%;
+  max-width: 200px;
 }
