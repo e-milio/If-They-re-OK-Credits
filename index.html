@@ -38,9 +38,9 @@
       (function autoScroll() {
         var depth = window.innerHeight;
         var scrollInterval = window.setInterval(function() {
-          depth = depth > -1*list.offsetHeight ? depth - 4 : window.innerHeight;
+          depth = depth > -1*list.offsetHeight ? depth - 1 : window.innerHeight;
           list.style.transform = 'translateY(' + depth + 'px)';
-        }, 50);
+        }, 25);
       })();
     });
     </script>
