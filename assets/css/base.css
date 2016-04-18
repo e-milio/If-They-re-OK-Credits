@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -92,7 +92,7 @@ main {
 
 /* line 29, ../scss/base.scss */
 main.list {
-  padding-bottom: 100vh;
+  position: relative;
 }
 /* line 31, ../scss/base.scss */
 main.list article {
@@ -119,8 +119,8 @@ main.list article section:nth-of-type(2) {
 /* line 48, ../scss/base.scss */
 main.list article section:only-child {
   flex: 0 0 100%;
-  padding-left: calc(50% + 1em);
-  text-align: left;
+  padding-right: calc(50% + 1em);
+  text-align: right;
 }
 
 /* line 56, ../scss/base.scss */
@@ -156,20 +156,27 @@ section.message.error {
 
 /* line 84, ../scss/base.scss */
 main.submission label {
-  display: inline-block;
   width: 250px;
+  line-height: 1.0em;
 }
 /* line 88, ../scss/base.scss */
 main.submission input {
   width: 50%;
 }
 /* line 91, ../scss/base.scss */
+main.submission li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+/* line 96, ../scss/base.scss */
 main.submission li.submit {
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-/* line 93, ../scss/base.scss */
+/* line 100, ../scss/base.scss */
 main.submission li.submit h1 {
-  display: inline-block;
   border: 3px solid white;
   padding: 15px 10px 20px;
   cursor: pointer;
@@ -178,20 +185,28 @@ main.submission li.submit h1 {
   -webkit-transition: color 0.1s linear, border-color 0.1s linear;
   transition: color 0.1s linear, border-color 0.1s linear;
 }
-/* line 100, ../scss/base.scss */
+/* line 106, ../scss/base.scss */
 main.submission li.submit h1:hover {
   color: tomato;
   border-color: tomato;
 }
+/* line 111, ../scss/base.scss */
+main.submission li + li {
+  margin-top: 1em;
+}
+/* line 114, ../scss/base.scss */
+main.submission .footnote {
+  font-size: 1.2rem;
+}
 
-/* line 107, ../scss/base.scss */
+/* line 119, ../scss/base.scss */
 h1 {
   font-size: 6.0rem;
   margin: 1em 0;
   text-align: center;
 }
 
-/* line 112, ../scss/base.scss */
+/* line 124, ../scss/base.scss */
 p {
   margin: 1em 0;
 }
