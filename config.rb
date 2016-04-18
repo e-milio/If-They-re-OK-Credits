@@ -1,5 +1,4 @@
-css_dir="public/assets/css"
-sass_dir="public/assets/scss"
-javascripts_dir="public/assets/js"
-images_dir="public/assets/img"
-
+css_dir="assets/css"
+sass_dir="assets/scss"
+javascripts_dir="assets/js"
+images_dir="assets/img"

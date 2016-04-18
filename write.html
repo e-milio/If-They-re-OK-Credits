@@ -17,22 +17,21 @@
       var errorMessage = document.getElementById('error');
       var thanksName = document.getElementById('thanks-name');
 
+      /* Keybase form submission. Listen for 'enter/return' */
       document.addEventListener('keypress', function(event) {
-        console.log('keypress');
         if(event.keyCode == 13) {
-          console.log('you pressed enter');
           submitCredit();
         }
       });
-
       button.addEventListener('click', submitCredit);
 
       function submitCredit() {
         var name = nameField.value;
         var credit = creditField.value;
         var obj = {
-          'name'    : name,
-          'credit'  : credit
+          'name'      : name,
+          'credit'    : credit,
+          'timestamp' : Firebase.ServerValue.TIMESTAMP
         };
         credits.push(obj, function(error) {
           if(error) {
@@ -53,7 +52,7 @@
       }
 
       function fadeOut(elm, o) {
-        o = o - 0.1;
+        o = o - 0.1; /* Opacity: 1.0 --> 0.0 */
         elm.style.opacity = o;
         if(o > 0) {
           setTimeout(function() {
@@ -90,8 +89,8 @@
     <section id="error" class="error message">
       <div class="wrapper">
         <h1>Uh Oh</h1>
-        <p>Something went wrong with your submission. Try again, or find Emilio and Katie.</p>
-        <p>Sorry about that!</p>
+        <p>Something went wrong with your submission. Are you sure you put some sort of name in there?</p>
+        <p>Try again or find Katie or Emilio.</p>
         <p class="autoDismiss">This message will auto-dismiss in 3 seconds</p>
       </div>
     </section>
@@ -102,7 +101,7 @@
           <input type="text" id="name" value="" />
         </li>
         <li>
-          <label>Your Contribution:</label>
+          <label>Your Contribution:<br/><span class="footnote">(Optional)</span></label>
           <input type="text" id="credit" value="" />
         </li>
         <li class="submit">
