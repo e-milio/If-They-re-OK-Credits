@@ -30,9 +30,14 @@
       }
 
       /*
+      Manipulate css transform properties for GPU accelerated scrolling
+      =================================================================
       start:
-      100% off screen --> window.innerHeight;
-      then -4px at a time until
+      100% off screen (window.innerHeight);
+
+      then -1px at a time every 25 milliseconds
+
+      end:
       -1*list.offsetHeight
       */
       (function autoScroll() {
